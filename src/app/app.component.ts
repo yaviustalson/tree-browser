@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from './data.service';
+import { Tree } from './tree';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.styl']
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.styl']
 })
-export class AppComponent {
-  title = 'tree-browser';
-}
+export class AppComponent implements OnInit {
+	title : string = 'tree-browser';
+	treeData : Tree;
+
+	constructor(private dataService: DataService) {}
+
+	ngOnInit() {
+		const tree = this.dataService.getTree();
+		console.log('[debug] ngOnInit tree', tree);
+		this.treeData = tree;
+	}
+};

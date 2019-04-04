@@ -1,0 +1,14 @@
+<div class="tree-view">
+	<div class="tree-view__title" (click)="clickHandler()">
+		<span class="tree-view__item-icon">
+			<img [src]="data.type === 'file' ? fileImgUrl : folderImgUrl" alt="">
+		</span>
+		<span class="tree-view__item-name">{{data.name}}</span>
+	</div>
+	<ul class="tree-view__items" *ngIf="opened">
+		<li class="tree-view__item" *ngFor="let item of items">
+			<tree-view [data]="item"></tree-view>
+		</li>
+		<li class="tree-view__placeholder tree-view__item" *ngIf="!items || items.length === 0">Нет элементов</li>
+	</ul>
+</div>
