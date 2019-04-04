@@ -16,7 +16,7 @@ export class TreeViewComponent implements OnInit{
 	fileImgUrl : string = fileImgUrl;
 	opened : boolean = false;
 	items : Array<Tree>;
-	type: string;
+	type : string;
 
 	clickHandler() {
 		debugger;
