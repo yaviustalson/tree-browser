@@ -11,6 +11,7 @@ const folderImgUrlOpened = 'assets/icons/folder-opened.png';
 })
 export class TreeViewComponent implements OnInit{
 	@Input() data : Tree;
+	@Input() initialOpened : boolean = false;
 	folderImgUrl : string = folderImgUrl;
 	fileImgUrl : string = fileImgUrl;
 	opened : boolean = false;
@@ -31,5 +32,6 @@ export class TreeViewComponent implements OnInit{
 			this.items = children.sort((a) => a.type === 'folder' ? -1 : 1);
 		}
 		this.type = type || 'folder';
+		this.opened = this.initialOpened;
 	}
 };

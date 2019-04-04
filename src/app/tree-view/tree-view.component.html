@@ -1,7 +1,7 @@
 <div class="tree-view">
 	<div class="tree-view__title" (click)="clickHandler()">
 		<span class="tree-view__item-icon">
-			<img [src]="data.type === 'file' ? fileImgUrl : folderImgUrl" alt="">
+			<img [src]="type === 'file' ? fileImgUrl : folderImgUrl" alt="">
 		</span>
 		<span class="tree-view__item-name">{{data.name}}</span>
 	</div>
