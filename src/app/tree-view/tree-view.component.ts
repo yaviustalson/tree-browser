@@ -19,7 +19,6 @@ export class TreeViewComponent implements OnInit{
 	type : string;
 
 	clickHandler() {
-		debugger;
 		if (this.type === 'folder') {
 			this.opened = !this.opened;
 			this.folderImgUrl = this.opened ? folderImgUrlOpened : folderImgUrl;

@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
 
 	ngOnInit() {
 		const tree = this.dataService.getTree();
-		console.log('[debug] ngOnInit tree', tree);
 		this.treeData = tree;
 	}
 };
