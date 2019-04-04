@@ -4,6 +4,7 @@
 			<img [src]="type === 'file' ? fileImgUrl : folderImgUrl" alt="">
 		</span>
 		<span class="tree-view__item-name">{{data.name}}</span>
+		<span class="tree-view__items-count" *ngIf="type==='folder'">{{items.length}}</span>
 	</div>
 	<ul class="tree-view__items" *ngIf="opened">
 		<li class="tree-view__item" *ngFor="let item of items">
